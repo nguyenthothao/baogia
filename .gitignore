@@ -1,0 +1,11 @@
+package-lock.json
+node_modules
+
+#Vscode
+*.code-workspace
+.vscode/
+.history/
+
+# Other
+*.log
+*.p12
