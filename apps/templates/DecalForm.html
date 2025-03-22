@@ -1,0 +1,23 @@
+<form id="decalForm" class="p-2 border border-light rounded bg-light" onsubmit="handleFormSubmit(this)">
+    <p class="h4 mb-4 text-center" style="color:red">Bảng Tính Decal</p>
+    
+	<div class="form-group">
+		<label for="number01">Chiều cao tem (cm)</label>
+		<input type="text" class="form-control" id="number01" name="amount" placeholder="Chiều cao tem (cm)" required>
+	</div>
+	<div class="form-group">
+		<label for="number02">Chiều rộng tem (cm)</label>
+		<input type="text" class="form-control" id="number02" name="faces" placeholder="Chiều rộng tem (cm)" required>
+	</div>
+  <!-- <div class="form-group">
+    <label for="number02">Số bù hao</label>
+    <select class="form-control" id="number02" name="faces" required>
+      <option>1 mặt</option>
+      <option>2 mặt</option>
+    </select>
+  </div> -->
+
+
+	<button type="submit" class="btn btn-primary">Gửi đi</button>
+  <input class="btn btn-secondary" type="reset" value="Xóa các trường">
+</form>

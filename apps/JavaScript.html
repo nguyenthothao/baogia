@@ -1,0 +1,33 @@
+<script>
+  // Prevent forms from submitting.
+  function preventFormSubmit() {
+    var forms = document.querySelectorAll('form');
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener('submit', function(event) {
+        event.preventDefault();
+      });
+    }
+  }
+  window.addEventListener("load", functionInit, true); 
+  
+  //INITIALIZE FUNCTIONS ONLOAD
+  function functionInit(){  
+    preventFormSubmit();
+  };
+  
+  //HANDLE FORM SUBMISSION
+  function handleFormSubmit(formObject) {
+    google.script.run.withSuccessHandler(createTable).Decal(formObject);
+    document.getElementById("decalForm").reset();
+  }
+  
+  //CREATE THE DATA TABLE
+  function createTable(data) {
+    console.log({data});
+    if (data && data.success) {
+      document.getElementById("soToIn").innerText = data.soToIn;
+      document.getElementById("buHao").innerText = data.soToCon;
+    }
+  }
+  
+</script>
