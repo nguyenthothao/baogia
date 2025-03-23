@@ -12,7 +12,9 @@
   
   // INITIALIZE Decal Form
   function initDecalForm() {
-    var $form = $("#decalForm");
+    var $form = $("#decalForm"); 
+
+    // Populate dropdowns with data from the spreadsheet
     $form.find('select').each(function() {
       var $select = $(this);
       var name = $select.attr('name');

@@ -1,15 +1,15 @@
 function Decal(formObject) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(globalVariables().sheetNames.decal);
-  // TODO: set value from formObject "Số lượng đặt hàng (cái)" /name formObject.amount
-  // TODO: set value from formObject "Số mặt in"
-  sheet.getRange("D6").setValue(formObject.amount);
-  sheet.getRange("D7").setValue(formObject.faces);
+  // TODO: set value from formObject = { D5: '...', D6: '', D7: '', D8: '...', D12: '...', D13:'...' }
+  writeLogs('Decal', JSON.stringify(formObject));
+  writeLogs('Decal', Object.keys(formObject).join(' | '));
+  Object.keys(formObject).forEach(function(key) {
+    sheet.getRange(key).setValue(formObject[key]);
+  });
 
   SpreadsheetApp.flush();
 
   // TODO: get value after calculated
-  // Số tờ in (khổ 32x47)
-  // Bù hao
   var soToCon = sheet.getRange("D10").getValue();
   var soToIn = sheet.getRange("D11").getValue();
   var results = {
