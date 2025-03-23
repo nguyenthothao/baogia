@@ -34,29 +34,7 @@ function getCellValue() {
     writeLogs(cellValue);
 }
 
-function getDropdownOptions() {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Decal');
-    var cell = sheet.getRange("D5"); // Ô chứa dropdown
-    var validation = cell.getDataValidation(); // Lấy Data Validation của ô
-    writeLogs('Decal', validation);
-    if (validation) {
-        var criteria = validation.getCriteriaValues(); // Lấy danh sách giá trị từ Data Validation
-        if (criteria.length > 0) {
-          if (typeof criteria[0] === "string") {
-            var options = criteria[0].split(',').map(option => option.trim()); // Tách thành mảng
-            Logger.log(options); // Xem kết quả trong Logger
-            return options;
-          } else if (criteria[0] && criteria[0].getValues) {
-            var vals = criteria[0].getValues;
-            Logger.log("vals: " + vals);
-            var range = criteria[0]; // Lấy range chứa danh sách dropdown
-            var values = range.getValues().flat(); // Lấy tất cả giá trị từ range
-            Logger.log("List from a Range: " + values);
-            return values;
-          }
-
-        }
-    }
-    Logger.log("No dropdown options found.");
-    return [];
+function initDecal() {
+  var dropdownListD5 = getDropdownOptions('Decal', 'D5');
+  writeLogs('Decal', dropdownListD5.join(' | '));
 }

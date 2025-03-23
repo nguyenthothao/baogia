@@ -1,4 +1,4 @@
-<script>
+<script defer>
   // Prevent forms from submitting.
   function preventFormSubmit() {
     var forms = document.querySelectorAll('form');
@@ -10,10 +10,21 @@
   }
   window.addEventListener("load", functionInit, true); 
   
-  //INITIALIZE FUNCTIONS ONLOAD
-  function functionInit(){  
-    preventFormSubmit();
-  };
+  // INITIALIZE Decal Form
+  function initDecalForm() {
+    var $form = $("#decalForm");
+    $form.find('select').each(function() {
+      var $select = $(this);
+      var name = $select.attr('name');
+      google.script.run.withSuccessHandler(function(options) {
+        console.log({options});
+        $select.empty();
+        options.forEach(function(option) {
+          $select.append('<option value="' + option + '">' + option + '</option>');
+        });
+      }).getDropdownOptions('Decal', name);
+    });
+  }
   
   //HANDLE FORM SUBMISSION
   function handleFormSubmit(formObject) {
@@ -29,5 +40,10 @@
       document.getElementById("buHao").innerText = data.soToCon;
     }
   }
-  
+
+  //INITIALIZE FUNCTIONS ONLOAD
+  function functionInit(){  
+    preventFormSubmit();
+    initDecalForm();
+  };
 </script>

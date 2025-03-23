@@ -4,4 +4,5 @@ function doGet() {
 
 function main() {
   Logger.log('Loadding Main script!!');
+  getCellValue();
 }
