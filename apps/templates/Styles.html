@@ -1,11 +1,70 @@
 <style>
-  .container {
-    background: blue;
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
   }
+  .container.wrapper {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .1);
+  }
+  .calculate-group {
+    padding: 20px;
+  }
+  .calculate-group .form-group {
+    background: #fdfbfb;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .1);
+    padding: 20px;
+  }
+
+  form button[type="submit"] {
+    width: 50%;
+  }
+  form input[type="reset"] {
+    width: 48%;
+  }
+  form .form-label-group {
+    margin-bottom: 1rem;
+  }
+  form .form-label-group label {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 0.5rem;
+  }
+
+  .decal-summary ul {
+    padding-left: 20px;
+  }
+
+  .decal-summary ul li {
+    margin-bottom: 1rem;
+  }
+  .decal-summary ul li p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .decal-summary ul li p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .decal-summary ul li span {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  .decal-summary ul li p span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
   h2 {
-    color: #fff;
-  }
-  .so-to-in, .bu-hao {
-    color: #fff;
+    color: red;
   }
 </style>

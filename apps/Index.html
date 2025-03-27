@@ -7,28 +7,20 @@
     <?!= include('templates\\JavaScript'); ?> <!-- See JavaScript.html file -->     
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
+    <div class="container wrapper">
+      <div class="calculate-group row">
+        <div class="form-group col-6">
           <?!= include('templates\\DecalForm'); ?> <!-- See DemoForm.html file -->
           <br><br>
           <div id="output"></div>
         </div>
+        <div class="results col-6">
+          <?!= include('templates\\DecalSummary'); ?>
+        </div>
       </div>
       <div class="row">
-        <div class="col-6">
-          <h2>Giá trị sau khi tính là:</h2>
-          <p class="so-to-in">
-            Số tờ in:
-            <span id="soToIn"></span>
-          </p>
-          <p class="bu-hao">
-            Bù hao:
-            <span id="buHao"></span>
-          </p>
-          <br><br>
-        </div>
-      </div>  
+        <?!= include('templates\\BravoTable'); ?>
+      </div>
     </div>
   </body>
 </html>
